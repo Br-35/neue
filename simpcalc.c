@@ -2,20 +2,31 @@
 
 int main () {
     float input1, input2, output;
-    char operator;
+    char op;
 
     printf("Input a number: ");
-    scanf("%f", input1);
+    scanf("%f", &input1);
 
-    printf("Choose operator (+ - * or /): ");
-    scanf("%c", operator);
+    printf("Choose op (+ - * or /): ");
+    scanf("%c", &op);
+    scanf("%c", &op);
 
-    switch (operator) {
-        case '': 
+    switch (op) {
+        case '+': op = 0; break;
+        case '-': op = 1; break;
+        case '*': op = 2; break;
+        case '/': op = 3; break;
     }
 
     printf("Input 2nd number: ");
-    scanf("%f", input2);
+    scanf("%f", &input2);
 
-    printf("%f", output)
+    switch (op) {
+        case 0: output = input1 + input2; break;
+        case 1: output = input1 - input2; break;
+        case 2: output = input1 * input2; break;
+        case 3: output = input1 / input2; break;
+    }
+
+    printf("%.2f", output);
 }
